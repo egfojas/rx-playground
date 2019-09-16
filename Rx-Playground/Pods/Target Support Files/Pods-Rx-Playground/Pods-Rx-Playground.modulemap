@@ -1,0 +1,6 @@
+framework module Pods_Rx_Playground {
+  umbrella header "Pods-Rx-Playground-umbrella.h"
+
+  export *
+  module * { export * }
+}

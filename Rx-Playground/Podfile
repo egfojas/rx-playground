@@ -1,0 +1,17 @@
+platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+
+def all_main_targets_pods
+    pod 'RxSwift', '4.2.0'
+    pod 'RxCocoa', '4.2.0'
+end
+
+target 'Rx-Playground' do
+    all_main_targets_pods
+end
+
+
+
+
