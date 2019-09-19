@@ -74,10 +74,8 @@ let disposable = countStream.subscribe(onNext: { (element) in
  
  
  ## BUT WAIT! Where is the Observer?
- In our definition of Observer, it is an object that conforms to ObserverType protocol. But we didn't really created anything that conforms to the ObserverType. At least not explicitly. The previous two subscription implementation saves us the trouble of defining our own Observer. If we explore the implementations of these, we can see that it allocates and use an instance of AnonymousObserver type inside the function bodies. (see ObservableType+Extenions.swift). You can still create and customize your own observer objects as long as it conforms to the ObserverType protocol.
+ In our definition of Observer, it is an object that conforms to ObserverType protocol. But we didn't really created anything that conforms to the ObserverType. At least not explicitly.
  
+ The previous two subscription implementation saves us the trouble of defining our own Observer. If we explore the implementations of these, we can see that it allocates and use an instance of AnonymousObserver type inside the function bodies. (see ObservableType+Extenions.swift). You can still create and customize your own observer objects as long as it conforms to the ObserverType protocol but this usually suffice for most cases.
 */
-
-
-
 //: [Next](@next)
