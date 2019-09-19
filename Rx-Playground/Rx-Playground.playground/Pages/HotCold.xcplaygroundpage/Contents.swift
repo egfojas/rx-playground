@@ -1,5 +1,5 @@
 import RxSwift
-
+import RxCocoa
 /*:
  # Hot and Cold Observables
  
@@ -30,6 +30,54 @@ import RxSwift
  since our 1st and 2nd observer did not see the same sequence of events, as our 2nd observer subscribed after a certain amount of time.
  
  Vámonos!
+ */
+
+//: ## Hot Examples
+//: **PublishSubjects**: Subscribers will only receive sequence values after subscription
+    let temperature = PublishSubject<Float>()
+    temperature.onNext(1.0)
+    temperature.onNext(1.1)
+
+    temperature.subscribe(onNext: { (temperature) in
+        print("Current temperature is: \(temperature)")
+    })
+
+    temperature.onNext(2.0)
+    temperature.onNext(3.0)
+    temperature.onNext(1.0)
+//    temperature.onCompleted()
+//    temperature.onNext(3.0)
+//    temperature.onNext(1.0)
+// Your attempts are futile
+
+
+//: **Variable**: Subscribers will receive last(initial) sequence value upon subscription as well as suceeding sequence values. **DEPRECATED in RxSwift5**
+    enum ViewStates {
+        case unloaded
+        case loaded
+        case willAppear
+        case didAppear
+        case willDisappear
+        case didDisappear
+    }
+
+    let currentState = Variable<ViewStates>(.unloaded)
+//: **BehaviorSubject**: Subscribers will receive last(initial) sequence value upon subscription as well as suceeding sequence values
+    let currentState2 = BehaviorSubject<ViewStates>(value: .loaded)
+    currentState2.subscribe(onNext: { (state) in
+        print("Current state is: \(temperature)")
+    })
+
+    currentState2.onNext(.willAppear)
+
+//: **ControlProperty**: Trait for `Observable`/`ObservableType` that represents property of UI element
+    let textField = UITextField(frame: .zero)
+    let textStream = textField.rx.text
+
+    let button = UIButton(frame: .zero)
+    button.rx.tap
+
+//: ## Cold Examples
  
  
  */
