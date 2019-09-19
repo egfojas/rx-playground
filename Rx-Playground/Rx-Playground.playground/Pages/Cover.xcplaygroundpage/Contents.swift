@@ -4,8 +4,8 @@
  ## Table of Contents
  
  * [Overview](Overview)
- * [Publisher-Subscriber](PubSub)
- * Hot and Cold
+ * [Observable-Observer](PubSub)
+ * [Hot and Cold](HotCold)
  * Operations
 */
 //: [Next](@next)

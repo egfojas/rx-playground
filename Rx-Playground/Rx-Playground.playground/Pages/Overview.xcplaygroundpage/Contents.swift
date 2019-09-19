@@ -23,7 +23,7 @@
  
  ---
  ## Keywords
- * Observable/Signal/Publisher/Stream
+ * Observable/Signal/Publisher/Stream/Sequence
  * Observer/Subscriber
  * Hot and Cold
  * Events
