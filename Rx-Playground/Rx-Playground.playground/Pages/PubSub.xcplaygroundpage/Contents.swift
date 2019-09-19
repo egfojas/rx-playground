@@ -1,7 +1,8 @@
+//: [Previous](@previous)
+
 import UIKit
 import RxSwift
 
-var str = "Hello, playground"
 let publisher = PublishSubject<Float>()
 
 publisher.subscribe(onNext: { (value) in
@@ -34,3 +35,4 @@ coldObservable.subscribe(onNext: { (value) in
     print("radio3: \(value)")
 })
 
+//: [Next](@next)
