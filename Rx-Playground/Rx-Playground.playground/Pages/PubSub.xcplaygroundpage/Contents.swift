@@ -71,6 +71,13 @@ let disposable = countStream.subscribe(onNext: { (element) in
 /*:
  Noticed the onDisposed parameter on the 2nd subscribe? While it is not really a case of Events enum, you can think of it in the same way. Each subscribe call to an Observable returns a Disposable object. Disposable is the subscription object that can be used to unsubscribe from the Observable sequence.
  * onDisposed: Action to invoke upon any type of termination of sequence (if the sequence has gracefully completed, errored, or if the generation is canceled by disposing subscription).
+ 
+ 
+ ## BUT WAIT! Where is the Observer?
+ In our definition of Observer, it is an object that conforms to ObserverType protocol. But we didn't really created anything that conforms to the ObserverType. At least not explicitly. The previous two subscription implementation saves us the trouble of defining our own Observer. If we explore the implementations of these, we can see that it allocates and use an instance of AnonymousObserver type inside the function bodies. (see ObservableType+Extenions.swift). You can still create and customize your own observer objects as long as it conforms to the ObserverType protocol.
+ 
 */
+
+
 
 //: [Next](@next)
