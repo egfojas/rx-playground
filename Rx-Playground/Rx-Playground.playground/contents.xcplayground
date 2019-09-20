@@ -4,5 +4,7 @@
         <page name='Cover'/>
         <page name='Overview'/>
         <page name='PubSub'/>
+        <page name='HotCold'/>
+        <page name='Operators'/>
     </pages>
 </playground>

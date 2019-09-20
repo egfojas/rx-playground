@@ -6,6 +6,6 @@
  * [Overview](Overview)
  * [Observable-Observer](PubSub)
  * [Hot and Cold](HotCold)
- * Operations
+ * [Operators](Operators)
 */
 //: [Next](@next)
