@@ -7,5 +7,6 @@
  * [Observable-Observer](PubSub)
  * [Hot and Cold](HotCold)
  * [Operators](Operators)
+ * [Disposable](Disposable)
 */
 //: [Next](@next)

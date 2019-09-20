@@ -6,5 +6,6 @@
         <page name='PubSub'/>
         <page name='HotCold'/>
         <page name='Operators'/>
+        <page name='Disposable'/>
     </pages>
 </playground>
