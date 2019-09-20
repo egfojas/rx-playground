@@ -78,7 +78,7 @@ import UIKit
 //: **ControlProperty**: Trait for `Observable`/`ObservableType` that represents property of UI element
     let textField = UITextField(frame: .zero)
     textField.rx.text.subscribe(onNext: { (text) in
-        print("Current text is: \(text)")
+        print("Current text is: \(text ?? "nil")")
     })
 
     let button = UIButton(frame: .zero)
@@ -89,6 +89,31 @@ import UIKit
 //: Moving on to Cold Observables. Hope that it won't bother you
 //: ## Cold Examples
 
+var movie = "Rambo"
+let nowShowing = Observable<String>.create { (observer) -> Disposable in
+        observer.on(.next(movie))
+        return Disposables.create()
+    }
+//    .do(onNext: { (_) in
+//        print("Side effect")
+//    })
+//let nowShowing = Observable.just(movie)
+//let nowShowing = Observable.deferred { () -> Observable<String> in
+//    return Observable.just(movie)
+//}
+
+nowShowing.subscribe(onNext: { (value) in
+    print("Observer A: \(value)")
+})
+
+//movie = "Titanic"
+//nowShowing.subscribe(onNext: { (value) in
+//    print("Observer B: \(value)")
+//})
+//
+//nowShowing.subscribe(onNext: { (value) in
+//    print("Observer C: \(value)")
+//})
 
 
 //: [Next](@next)
